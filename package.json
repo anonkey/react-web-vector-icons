@@ -48,7 +48,8 @@
   },
   "scripts": {
     "prod": "npm run clean; webpack --mode production",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublish": "rm -rf dist build && mkdir build dist && babel-node build.js && babel src/index.js --out dist/index.js && babel build --out dist"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
